@@ -9,6 +9,12 @@ import ReadingPage from './screens/ReadingPage';
 // For expo: npx expo install react-native-screens react-native-safe-area-context
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WritingPage from './screens/WritingPage';
+import SpeakingPage from './screens/SpeakingPage';
+import ExercisePage from './screens/ExercisePage';
+import VocabularyPage from './screens/VocabularyPage';
+import ListeningPage from './screens/ListeningPage';
+import ScoredetalisPage from './screens/ScoredetalisPage';
 
 
 const Stack = createNativeStackNavigator();
@@ -21,6 +27,12 @@ export default function App() {
         <Stack.Screen name="Home" component={HomePage} />
         <Stack.Screen name="Module" component={ModulePage} />
         <Stack.Screen name="Reading" component={ReadingPage} />
+        <Stack.Screen name="Writing" component={WritingPage} />
+        <Stack.Screen name="Speaking" component={SpeakingPage} />
+        <Stack.Screen name="Lestining" component={ListeningPage} />
+        <Stack.Screen name="Exercise" component={ExercisePage} />
+        <Stack.Screen name="Vocabulary" component={VocabularyPage} />
+        <Stack.Screen name="Scoredetails" component={ScoredetalisPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

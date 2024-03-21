@@ -2,41 +2,44 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 // npx expo install react-native-pager-view 
 // npm install @react-navigation/material-top-tabs react-native-tab-view
+
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+const Tab = createMaterialTopTabNavigator();
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+//const Tab = createBottomTabNavigator();
 import ReadingPage from './ReadingPage';
 import HomePage from './HomePage';
+import WritingPage from './WritingPage';
+import ListeningPage from './ListeningPage';
+import SpeakingPage from './SpeakingPage';
 
-const Tab = createMaterialTopTabNavigator();
-//const Tab = createBottomTabNavigator();
-export default function ModulePage({ navigation }) {
+
+
+export default function ModulePage(props) {
     return (
         // <View>
         //     <Text>ttigkghjh</Text>
         // </View>
         <Tab.Navigator>
-           <Tab.Screen name="Home" component={ReadingPage}  
+           {/* <Tab.Screen name="Reading" component={ReadingPage}  
              options={{
-                tabBarLabel: 'Home',
-                tabBarIcon: ({ color, size }) => (
-                    <MaterialCommunityIcons name="mosque" color={'blue'} size={35} />
-                ),
+                tabBarLabel: 'Reading',
+                }}/> */}
+             <Tab.Screen name="Writing" component={WritingPage}  
+             options={{
+                tabBarLabel: 'Writing',
                 }}/>
-             <Tab.Screen name="Home" component={ReadingPage}  
+                 <Tab.Screen name="Listening" component={ListeningPage}  
              options={{
-                tabBarLabel: 'Home',
-                tabBarIcon: ({ color, size }) => (
-                    <MaterialCommunityIcons name="mosque" color={'blue'} size={35} />
-                ),
-                }}/> <Tab.Screen name="Home" component={ReadingPage}  
-                options={{
-                   tabBarLabel: 'Home',
-                   tabBarIcon: ({ color, size }) => (
-                       <MaterialCommunityIcons name="mosque" color={'blue'} size={35} />
-                   ),
-                   }}/>
+                tabBarLabel: 'Listenig',
+                }}/>
+                 <Tab.Screen name="Speaking" component={SpeakingPage}  
+             options={{
+                tabBarLabel: 'Speaking',
+                }}/>
+            
         </Tab.Navigator>
     )
 }

@@ -15,6 +15,7 @@ export default function TextCard({ number, meaning, iconName, iconSize, iconColo
     }
 
     return (
+        <TouchableOpacity onPress={onPressDetails}>
         <View style={styles.card1}>
             <View style={styles.cardhead}>
                 <MaterialCommunityIcons name={iconName} size={iconSize} color={iconColor} />
@@ -43,15 +44,17 @@ export default function TextCard({ number, meaning, iconName, iconSize, iconColo
                 </TouchableOpacity>
             </View>
         </View>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     card1: {
         flex: 1,
-        backgroundColor: "#A6C5EB",
+        backgroundColor: "skyblue",
         padding: 5,
-        borderRadius: 15
+        borderRadius: 15,
+        margin: 5
     },
     cardhead: {
         flex: 1,
